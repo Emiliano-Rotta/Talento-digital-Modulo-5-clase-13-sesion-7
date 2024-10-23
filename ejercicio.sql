@@ -10,6 +10,25 @@
 --     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 -- );
 
+-- -- Tabla City
+-- CREATE TABLE City (
+--     city_id SERIAL PRIMARY KEY,
+--     city VARCHAR(50) NOT NULL,
+--     country_id INT REFERENCES Country(country_id),
+--     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- Tabla Address
+-- CREATE TABLE Address (
+--     address_id SERIAL PRIMARY KEY,
+--     address VARCHAR(100) NOT NULL,
+--     address2 VARCHAR(100),
+--     district VARCHAR(50),
+--     city_id INT REFERENCES City(city_id),
+--     postal_code VARCHAR(10),
+--     phone VARCHAR(20),
+--     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
 
 -- -- Tabla Customer
 -- CREATE TABLE Customer (
@@ -20,6 +39,20 @@
 --     address_id INT REFERENCES Address(address_id),
 --     active BOOL DEFAULT TRUE,
 --     create_date DATE DEFAULT CURRENT_DATE,
+--     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- Tabla Staff
+-- CREATE TABLE Staff (
+--     staff_id SERIAL PRIMARY KEY,
+--     first_name VARCHAR(50) NOT NULL,
+--     last_name VARCHAR(50) NOT NULL,
+--     email VARCHAR(100),
+--     address_id INT REFERENCES Address(address_id),
+--     store_id INT,
+--     active BOOL DEFAULT TRUE,
+--     username VARCHAR(50),
+--     password VARCHAR(50),
 --     last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 -- );
 
